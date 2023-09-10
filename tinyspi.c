@@ -189,7 +189,8 @@ int main(void)
         default: // Ignore
           break;
       }
-      // Set MSB on pin *before* first clock edge
+      /* Set MSB on pin *before* first rising clock edge as the master
+         will read it then */
       if (spi_out & 0x80) {
         PORTB |= _BV(MISOPIN);
       }

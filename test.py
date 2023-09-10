@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 import spidev
 from time import sleep
 
