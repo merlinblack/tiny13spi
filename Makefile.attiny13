@@ -1,0 +1,10 @@
+MCU=attiny13a
+AVRDUDEMCU=t13
+TARGET=tinyspi
+
+BAUD=10khz
+
+F_CPU=1200000UL
+LFUSE=0x6a
+
+include Makefile.all
