@@ -4,9 +4,8 @@
  * Using same SPI pins as used to program the chip.
  * No chip select as we have few pins and nothing else is connected.
  * No buffering as RAM is limited.
- * At higher SPI Clock Hz, you need to wait between bytes to allow 
- * commands to be processed.
- * Talks to a Raspberry Pi with bread board breakout attached, which also does the programming (AVRDUDE)
+ * At higher SPI Clock Hz, you need to wait between bytes to allow commands to be processed.
+ * Talks to a Raspberry Pi with bread board breakout attached, which also does the programming (AVRDUDE).
  
 ## SPI commands
 
