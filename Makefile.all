@@ -13,6 +13,7 @@ AVRDUDE=avrdude -Enoreset -p $(AVRDUDEMCU) $(PORT) -c $(DEVICE) $(BAUD)
 LFUSE:=$(if $(LFUSE),-U lfuse:w:$(LFUSE):m)
 HFUSE:=$(if $(HFUSE),-U hfuse:w:$(HFUSE):m)
 EFUSE:=$(if $(EFUSE),-U efuse:w:$(EFUSE):m)
+LOCK:=$(if $(EFUSE),-U lock:w:$(LOCK):m)
 
 all:
 	$(CC) $(CFLAGS) $(TARGET).c -o $(TARGET)
@@ -31,5 +32,14 @@ check:	all
 fuse:
 	$(AVRDUDE) $(LFUSE) $(HFUSE) $(EFUSE)
 
+readfuses:
+	$(AVRDUDE) -Ulfuse:r:-:h -Uhfuse:r:-:h -Ulock:r:-:h
+
 clean:
 	rm -f *.hex *.obj *.o $(TARGET)
+
+readeeprom:
+	$(AVRDUDE) -Ueeprom:r:eeprom.dat
+
+writeeeprom: eeprom.dat
+	$(AVRDUDE) -Ueeprom:w:eeprom.dat

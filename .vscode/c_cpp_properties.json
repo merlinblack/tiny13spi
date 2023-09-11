@@ -9,9 +9,9 @@
             "defines": [
                 "__AVR_ATtiny13__"
             ],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/opt/avr/bin/avr-gcc",
             "cStandard": "c17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-arm"
         }
     ],
     "version": 4
