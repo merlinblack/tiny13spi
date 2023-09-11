@@ -5,6 +5,11 @@ TARGET=tinyspi
 BAUD=10khz
 
 F_CPU=1200000UL
-LFUSE=0x6a
+
+# Usual fuses
+#LFUSE=0x6a
+
+# EESAVE set
+LFUSE=0x2a
 
 include Makefile.all
